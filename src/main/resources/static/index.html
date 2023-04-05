@@ -54,6 +54,17 @@
 			var nome = $("#nome").val();
 			var idade = $("#idade").val();
 			
+			$.ajax({
+				method: "POST",
+				url: "salvar",
+				data: JSON.stringify(),
+				contentType:"application/json; charset=utf-8",
+				sucess: function (response){
+					alert("Salvo com sucesso!");
+				}
+			}).fail(function (xhr, status, errorThrown){
+				alert("Erro ao salvar: " + xhr.responseText);
+			});
 			
 		}
 		</script>
